@@ -8,7 +8,6 @@
 // Sets default values
 APlataformTrigger::APlataformTrigger()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	TriggerVolume = CreateDefaultSubobject<UBoxComponent>(FName("TriggerVolume"));
 	if (!ensure(TriggerVolume != nullptr))  return;
@@ -16,8 +15,6 @@ APlataformTrigger::APlataformTrigger()
 	TriggerVolume->OnComponentBeginOverlap.AddDynamic(this, &APlataformTrigger::OnOverlapBegin);
 	TriggerVolume->OnComponentEndOverlap.AddDynamic(this, &APlataformTrigger::OnOverlapEnd);
 
-	//StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(FName("Static Mesh"));
-	//StaticMesh->AttachTo(RootComponent);
 }
 
 // Called when the game starts or when spawned

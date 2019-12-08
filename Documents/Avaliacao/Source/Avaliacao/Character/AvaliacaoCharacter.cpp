@@ -11,7 +11,7 @@
 #include "GameFramework/SpringArmComponent.h"
 
 //////////////////////////////////////////////////////////////////////////
-// AProjetoMPCharacter
+// AvaliacaoCharacter
 
 AAvaliacaoCharacter::AAvaliacaoCharacter()
 {
@@ -61,9 +61,7 @@ void AAvaliacaoCharacter::SetupPlayerInputComponent(class UInputComponent* Playe
 	PlayerInputComponent->BindAxis("MoveForward", this, &AAvaliacaoCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AAvaliacaoCharacter::MoveRight);
 
-	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
-	// "turn" handles devices that provide an absolute delta, such as a mouse.
-	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
+
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("TurnRate", this, &AAvaliacaoCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
